@@ -1,17 +1,13 @@
 #Implementing Backtracking algorithm
 
-import numpy as np
-n=8
-a=np.zeros([n,n])
-status = True
-occupied=[]
-
 
 #function to implement backtracking
-def Backtracking(column, status):
+def Backtracking(array, column, status, n, occupied, queen):
 
 	for row in range (n):
-		a[row][column]=1
+		array[row][column]=1
+		queen[column].x, queen[column].y = column, row
+
 
 		#checking whether a conflict happens
 		for i in range(len(occupied)):
@@ -22,35 +18,23 @@ def Backtracking(column, status):
 				break
 
 
-		if status==True:
+		if status == True:
 			if column<n-1:
 				occupied.append([row,column])
 				if Backtracking(column+1, status):
 					return True
 				else:
-					a[row][column]=0
+					array[row][column]=0
 					occupied.pop(-1)
 					
 			else:
 				return True
 		else:
-			a[row][column]=0
+			array[row][column]=0
 			
 
 		
 	return False
-
-
-		
-def main():
-	Decision=Backtracking(0, status)
-	if Decision==True:
-		print(a)
-	else:
-		print(False)
-
-if __name__=="__main__":
-	main()
 
 
 
