@@ -1,7 +1,7 @@
 #Implementing Backtracking algorithm
 
 import numpy as np
-n=20
+n=8
 a=np.zeros([n,n])
 status = True
 occupied=[]
@@ -42,14 +42,15 @@ def Backtracking(column, status):
 
 
 		
+def main():
+	Decision=Backtracking(0, status)
+	if Decision==True:
+		print(a)
+	else:
+		print(False)
 
-Decision=Backtracking(0, status)
-if Decision==True:
-	print(a)
-else:
-	print(False)
-
-
+if __name__=="__main__":
+	main()
 
 
 
