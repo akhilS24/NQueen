@@ -2,14 +2,14 @@
 
 import numpy as np
 
-n = 8
+n = 4
 array = np.zeros([n, n])
 status = True
 occupied = []
 
 
 # function to implement backtracking
-def Backtracking(array, column, status, n, occupied):
+def Backtracking(column, status):
     for row in range(n):
         array[row][column] = 1
 

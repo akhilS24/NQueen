@@ -21,7 +21,7 @@ def Backtracking(array, column, status, n, occupied, queen):
 		if status == True:
 			if column<n-1:
 				occupied.append([row,column])
-				if Backtracking(column+1, status):
+				if Backtracking(array, column+1, status, n, occupied, queen):
 					return True
 				else:
 					array[row][column]=0

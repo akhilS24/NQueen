@@ -15,12 +15,12 @@ class Grid:
 
 class Queens:
 
-    def _init__(self, n):
+    def __init__(self, n):
         self.queen_num=n
         self.x = 0
         self.y = 0
     def draw_queen(self, window, grid_num):
-        pg.draw.circle(window, (255, 0, 0), ((800/grid_num)*(self.queen_num+(1/2)), (800/grid_num)*(self.y+(1/2))), 2, 0)
+        pg.draw.circle(window, (255, 0, 0), (int((800//grid_num)*(self.queen_num+(1/2))), int((800//grid_num)*(self.y+(1/2)))), 20, 0)
 
 
 
@@ -51,7 +51,8 @@ def main():
         #creating the pygame window
         WIN = (800, 800)
         window = pg.display.set_mode(WIN)
-    print(type(grid_num))
+
+    Backtracking(array, 0, status, grid_num, occupied, queen)
     #pygame loop
     while run:
         window.fill((0,0,0))
@@ -59,6 +60,8 @@ def main():
             if event.type==pg.QUIT:
                 pg.quit()
                 quit()
+
+
 
         grid.draw_grid(window)
         for i in range(grid_num):
@@ -70,3 +73,4 @@ def main():
 if __name__ == "__main__":
     main()
 
+#helllloooo
