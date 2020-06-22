@@ -22,7 +22,7 @@ class Queens:
         self.x = 0
         self.y = 0
     def draw_queen(self, window, grid_num):
-        pg.draw.circle(window, (255, 0, 0), (int((800//grid_num)*(self.queen_num+(1/2))), int((800//grid_num)*(self.y+(1/2)))), 5, 0)
+        pg.draw.circle(window, (255, 0, 0), (int((800//grid_num)*(self.queen_num+(1/2))), int((800//grid_num)*(self.y+(1/2)))), 8, 0)
 
 
 
@@ -56,8 +56,10 @@ def main():
 
 
         #threading the recursive function
-        thread1=threading.Thread(target=Backtracking, args=(array, 0, status, grid_num, occupied, queen))
+        thread1 = threading.Thread(target=Backtracking, args=(array, 0, status, grid_num, occupied, queen))
         thread1.start()
+
+
 
     #pygame loop
 
@@ -66,13 +68,14 @@ def main():
         for event in pg.event.get():
             if event.type==pg.QUIT:
                 pg.quit()
-                quit()
+                run=False
 
 
         grid.draw_grid(window)
         for i in range(grid_num):
             queen[i].draw_queen(window, grid_num)
         pg.display.update()
+
 
 
 
