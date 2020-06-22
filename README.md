@@ -10,7 +10,7 @@ I came across this easy but yet efficient algorithm to find a possible configura
 
 # I made use of the pygame module to visualize how the algorithm works.
 # Run the n_queen script
-# Try to give input dim> 20 to get a clear cut idea about how the algorithm works
+# Try to give input dim> 20 to see how the algorithm works
 
 
 
